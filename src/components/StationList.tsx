@@ -1,7 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
 import { BikeList } from "./BikeList";
 import { BikeCardContainer } from "./BikeCardContainer";
-import { Button } from "react-bootstrap";
 
 interface Props {
   id: number;

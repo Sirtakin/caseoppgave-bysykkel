@@ -1,10 +1,14 @@
 import { ReactNode } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 interface Props {
   children: ReactNode;
 }
 
 export const BikeCardContainer = ({ children }: Props) => {
-  return <Container fluid="md">{children}</Container>;
+  return (
+    <Container fluid="md">
+      <Row>{children}</Row>
+    </Container>
+  );
 };
