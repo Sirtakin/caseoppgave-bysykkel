@@ -1,6 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
 import { BikeList } from "./BikeList";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 
 interface Props {
   name: string;
@@ -30,14 +30,25 @@ export const StationList = ({
         <Accordion.Item eventKey={toggleButton}>
           <Accordion.Header>{name}</Accordion.Header>
           <Accordion.Body>
-            <BikeList
-              capacity={capacity}
-              availableBikes={availableBikes}
-              availableParking={availableParking}
-            />
-            <Button className="m-4" href={bikeMap}>
-              Map
-            </Button>
+            <Row>
+              <Col>
+                <BikeList
+                  capacity={capacity}
+                  availableBikes={availableBikes}
+                  availableParking={availableParking}
+                />
+              </Col>
+              <Col>
+                <Button
+                  variant="outline-primary"
+                  size="lg"
+                  className="m-1"
+                  href={bikeMap}
+                >
+                  Map
+                </Button>
+              </Col>
+            </Row>
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
