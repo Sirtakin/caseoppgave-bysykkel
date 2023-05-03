@@ -14,26 +14,24 @@ export const BikeList = ({
   return (
     <>
       <Container fluid="md">
-        <Row>
-          <Col>
+        <Row className="col-7 mx-left ">
+          <Col className="mb-2">
             <Card style={{ width: "18rem" }}>
-              <Card.Body>
+              <Card.Body className="text-center">
                 <Card.Title>Available Bikes</Card.Title>
                 <Card.Text>
                   {availableBikes} of {capacity}
                 </Card.Text>
-                {/* <Card.Link href="#">Map</Card.Link> */}
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "18rem" }} className="text-center">
               <Card.Body>
                 <Card.Title>Available Parking</Card.Title>
                 <Card.Text>
                   {availableParking} of {capacity}
                 </Card.Text>
-                {/* <Card.Link href="#">Map</Card.Link> */}
               </Card.Body>
             </Card>
           </Col>

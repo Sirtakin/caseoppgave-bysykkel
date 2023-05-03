@@ -22,17 +22,22 @@ export const StaionContainer = () => {
     <Container fluid={true}>
       <Stack gap={4}>
         {error && <Alert>{error}</Alert>}
-        <Row className="m-3">
-          <Button onClick={handleClick} size="lg">
+        <Row className="d-grid gap-2 m-2">
+          <Button
+            onClick={handleClick}
+            className="btn-color-info d-grid gap-2 col-7 mx-auto"
+          >
             {toggle ? "Expand All" : "Collapse All"}
           </Button>
         </Row>
-        <Row className="m-2">
+        <Row className="d-grid gap-2 col-7 mx-auto">
           {availability.map((station) => (
             <StationList
               key={station.station_id}
               name={station.name}
               capacity={station.capacity}
+              lat={station.lat}
+              lon={station.lon}
               toggleButton={toggle ? "0" : "1"}
               availableBikes={station.num_bikes_available}
               availableParking={station.num_docks_available}

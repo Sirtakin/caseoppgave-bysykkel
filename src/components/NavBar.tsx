@@ -3,9 +3,11 @@ import { Container, Navbar } from "react-bootstrap";
 export const NavBar = () => {
   return (
     <Container fluid>
-      <Navbar expand={true} variant="dark" bg="dark" className="mb-3">
+      <Navbar expand={true} className="mb-3 fw-bold">
         <Container>
-          <Navbar.Brand>Navbar</Navbar.Brand>
+          <Navbar.Brand>
+            Overview of available bikes and parking for the Oslo Byskkel
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </Container>
