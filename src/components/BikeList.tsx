@@ -1,13 +1,31 @@
-import { ListGroup } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Alert, Card, Container, Row } from "react-bootstrap";
+import apiClient from "../services/api-client";
+import { Bike } from "../hooks/useBike";
+
+interface Props {
+  bike: string;
+}
 
 export const BikeList = () => {
   return (
-    <ListGroup>
-      <ListGroup.Item>Cras justo odio</ListGroup.Item>
-      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-      <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-    </ListGroup>
+    <>
+      <Row>
+        <Card style={{ width: "18rem" }}>
+          <Card.Body>
+            <Card.Title>Available Bikes</Card.Title>
+            <Card.Text>5</Card.Text>
+            <Card.Link href="#">Map</Card.Link>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: "18rem" }}>
+          <Card.Body>
+            <Card.Title>Available Parking</Card.Title>
+            <Card.Text>10</Card.Text>
+            <Card.Link href="#">Map</Card.Link>
+          </Card.Body>
+        </Card>
+      </Row>
+    </>
   );
 };
