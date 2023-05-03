@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 
 interface FetchResponse<T> {
+  data: T[];
   station: T[];
 }
 
@@ -24,7 +25,7 @@ const useData = <T>(
           ...requestConfig,
         })
         .then((res) => {
-          setData(res.data.station);
+          setData(res.data.data.station);
         })
         .catch((err) => {
           if (err instanceof CanceledError) return;

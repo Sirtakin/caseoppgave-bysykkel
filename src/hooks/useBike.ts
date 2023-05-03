@@ -1,13 +1,24 @@
-import useData from "./useData";
-
-export interface Bike {
-  station_id: string;
-  num_bikes_available: number;
-  num_docks_available: number;
-}
+import { useEffect, useState } from "react";
+import bikeService, { Bike } from "../services/bike-service";
+import { CanceledError } from "../services/api-client";
 
 const useBike = () => {
-  useData<Bike>("/station_status.json");
+  const [bikes, setBikes] = useState<Bike[]>([]);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const { request } = bikeService.getAllStations();
+    request
+      .then((res) => {
+        setBikes(res.data.data.stations);
+      })
+      .catch((err) => {
+        if (err instanceof CanceledError) return;
+        setError(err.message);
+      });
+  }, []);
+
+  return { bikes, error };
 };
 
 export default useBike;

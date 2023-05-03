@@ -1,6 +1,5 @@
 import { CanceledError } from "axios";
 import { useState, useEffect } from "react";
-import apiClient from "../services/api-client";
 import stationService, { Station } from "../services/station-service";
 
 const useStations = () => {
@@ -20,7 +19,6 @@ const useStations = () => {
   }, []);
 
   return { stations, error };
-  console.log(stations);
 };
 
 export default useStations;
