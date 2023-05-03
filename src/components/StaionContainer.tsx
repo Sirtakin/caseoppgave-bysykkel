@@ -22,21 +22,20 @@ export const StaionContainer = () => {
     <Container fluid={true}>
       <Stack gap={4}>
         {error && <Alert>{error}</Alert>}
-        <Row>
-          <Button onClick={handleClick}>
+        <Row className="m-3">
+          <Button onClick={handleClick} size="lg">
             {toggle ? "Expand All" : "Collapse All"}
           </Button>
         </Row>
-        <Row>
+        <Row className="m-2">
           {availability.map((station) => (
             <StationList
               key={station.station_id}
-              id={parseInt(station.station_id)}
               name={station.name}
               capacity={station.capacity}
+              toggleButton={toggle ? "0" : "1"}
               availableBikes={station.num_bikes_available}
               availableParking={station.num_docks_available}
-              toggleButton={toggle ? "0" : "1"}
             />
           ))}
         </Row>

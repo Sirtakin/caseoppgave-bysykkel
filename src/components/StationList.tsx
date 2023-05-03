@@ -1,27 +1,26 @@
 import Accordion from "react-bootstrap/Accordion";
 import { BikeList } from "./BikeList";
+import { useState } from "react";
 
 interface Props {
-  id: number;
   name: string;
   capacity: number;
+  toggleButton: string;
   availableBikes?: number;
   availableParking?: number;
-  toggleButton: string;
 }
 
 export const StationList = ({
-  id,
   name,
   capacity,
+  toggleButton,
   availableBikes,
   availableParking,
-  toggleButton,
 }: Props) => {
   return (
     <>
-      <Accordion defaultActiveKey="1">
-        <Accordion.Item eventKey={toggleButton} key={id}>
+      <Accordion defaultActiveKey="1" className="mb-2">
+        <Accordion.Item eventKey={toggleButton}>
           <Accordion.Header>{name}</Accordion.Header>
           <Accordion.Body>
             <BikeList
