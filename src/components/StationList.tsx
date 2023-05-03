@@ -2,12 +2,11 @@ import Accordion from "react-bootstrap/Accordion";
 import { BikeList } from "./BikeList";
 import { BikeCardContainer } from "./BikeCardContainer";
 import { useEffect, useState } from "react";
-import stationService, { Data, Station } from "../services/station-service";
-import { AxiosError, CanceledError } from "axios";
+import stationService, { Station } from "../services/station-service";
+import { CanceledError } from "axios";
 import { Alert } from "react-bootstrap";
 
 export const StationList = () => {
-  const [stationData, setStationData] = useState<Data[]>([]);
   const [stations, setStations] = useState<Station[]>([]);
   const [error, setError] = useState("");
 
@@ -15,8 +14,7 @@ export const StationList = () => {
     const { request } = stationService.getAllStations();
     request
       .then((res) => {
-        setStationData(res.data);
-        setStations([...res.data.data.stations]);
+        setStations(res.data.data.stations);
       })
       .catch((err) => {
         if (err instanceof CanceledError) return;
@@ -28,16 +26,16 @@ export const StationList = () => {
     <>
       {error && <Alert>{error}</Alert>}
       <Accordion defaultActiveKey="1">
-        <Accordion.Item eventKey="0">
-          {stations.map((staiton) => (
+        {stations.map((staiton) => (
+          <Accordion.Item eventKey="0" key={staiton.station_id}>
             <Accordion.Header>{staiton.name}</Accordion.Header>
-          ))}
-          <Accordion.Body>
-            <BikeCardContainer>
-              <BikeList />
-            </BikeCardContainer>
-          </Accordion.Body>
-        </Accordion.Item>
+            <Accordion.Body>
+              <BikeCardContainer>
+                <BikeList />
+              </BikeCardContainer>
+            </Accordion.Body>
+          </Accordion.Item>
+        ))}
       </Accordion>
     </>
   );

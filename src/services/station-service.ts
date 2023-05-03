@@ -9,14 +9,10 @@ export interface Station {
   capacity: number;
 }
 
-export interface Data {
-  data: Station[];
-}
-
 class StationService {
   getAllStations() {
     const controller = new AbortController();
-    const request = apiClient.get<Data[]>("/station_information.json", {
+    const request = apiClient.get<Station[]>("/station_information.json", {
       signal: controller.signal,
     });
 
