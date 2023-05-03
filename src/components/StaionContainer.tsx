@@ -7,12 +7,16 @@ export const StaionContainer = () => {
   const { stations, error } = useStations();
   const [toggle, setToggle] = useState(false);
 
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <Container fluid={true}>
       <Stack gap={4}>
         {error && <Alert>{error}</Alert>}
         <Row>
-          <Button onClick={() => setToggle(!toggle)}>
+          <Button onClick={handleClick}>
             {toggle ? "Expand All" : "Collaps All"}
           </Button>
         </Row>

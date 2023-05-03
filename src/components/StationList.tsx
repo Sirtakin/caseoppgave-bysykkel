@@ -10,7 +10,6 @@ interface Props {
 }
 
 export const StationList = ({ id, name, toggleButton }: Props) => {
-  console.log(toggleButton);
   return (
     <>
       <Accordion defaultActiveKey="1">
