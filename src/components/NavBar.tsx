@@ -4,9 +4,9 @@ import { Container, Navbar } from "react-bootstrap";
 
 export const NavBar = () => {
   return (
-    <Container fluid>
+    <Container >
       <Navbar expand={true} className="mb-3 fw-bold">
-        <Container>
+        <Container >
           <Navbar.Brand>
             Overview of available bikes and parking for the Oslo Byskkel
           </Navbar.Brand>
