@@ -6,6 +6,8 @@ export interface Bike {
   num_docks_available: number;
 }
 
+//Calls the endpoint for the list of available bikes and parking.
+
 class StationService {
   getAllStations() {
     const controller = new AbortController();

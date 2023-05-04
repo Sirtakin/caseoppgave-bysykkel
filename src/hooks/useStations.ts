@@ -2,6 +2,8 @@ import { CanceledError } from "axios";
 import { useState, useEffect } from "react";
 import stationService, { Station } from "../services/station-service";
 
+//Gets and return the data for stations from the API
+
 const useStations = () => {
   const [stations, setStations] = useState<Station[]>([]);
   const [error, setError] = useState("");

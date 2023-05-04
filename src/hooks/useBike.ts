@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import bikeService, { Bike } from "../services/bike-service";
 import { CanceledError } from "../services/api-client";
 
+//Gets and return the data for bikes and parking from the API
+
 const useBike = () => {
   const [bikes, setBikes] = useState<Bike[]>([]);
   const [error, setError] = useState("");

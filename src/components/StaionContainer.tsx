@@ -1,8 +1,11 @@
+import { Alert, Button, Container, Row, Stack } from "react-bootstrap";
 import { useState } from "react";
 import { StationList } from "./StationList";
 import useStations from "../hooks/useStations";
-import { Alert, Button, Container, Row, Stack } from "react-bootstrap";
 import useBike from "../hooks/useBike";
+
+//Container to keep order to the list of stations and button.
+//Called from App-component, sends to StationList-component.
 
 export const StaionContainer = () => {
   const { stations, error } = useStations();

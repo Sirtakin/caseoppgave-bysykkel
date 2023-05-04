@@ -9,6 +9,8 @@ export interface Station {
   capacity: number;
 }
 
+//Calls the endpoint for the list of stations.
+
 class StationService {
   getAllStations() {
     const controller = new AbortController();

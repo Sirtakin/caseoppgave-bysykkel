@@ -6,6 +6,9 @@ interface Props {
   availableParking?: number;
 }
 
+//Creating cards for mapping of available bikes and parking for each station
+//Called from StationList-componenet.
+
 export const BikeList = ({
   capacity,
   availableBikes,

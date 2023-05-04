@@ -1,5 +1,7 @@
 import { Container, Navbar } from "react-bootstrap";
 
+//Basic navbar. No functionality, just styling
+
 export const NavBar = () => {
   return (
     <Container fluid>

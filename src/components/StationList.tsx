@@ -1,6 +1,6 @@
 import Accordion from "react-bootstrap/Accordion";
-import { BikeList } from "./BikeList";
 import { Button, Col, Row } from "react-bootstrap";
+import { BikeList } from "./BikeList";
 
 interface Props {
   name: string;
@@ -11,6 +11,9 @@ interface Props {
   availableBikes?: number;
   availableParking?: number;
 }
+
+//Creating accordions for each station. Creates links for button to google maps.
+//Called from StationContainer-component, sends to BikeList-component.
 
 export const StationList = ({
   name,
