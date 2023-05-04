@@ -9,3 +9,7 @@ Make sure you have updated Node.js
 
 Run using - npm install 
           - npm run dev
+
+
+Known bugs:
+- Expanding one accordion will reverse state when using Expand/Collaps-button
