@@ -7,7 +7,7 @@ import useBike from "../hooks/useBike";
 //Container to keep order to the list of stations and button.
 //Called from App-component, sends to StationList-component.
 
-export const StaionContainer = () => {
+export const StaitonContainer = () => {
   const { stations, error } = useStations();
   const [toggle, setToggle] = useState(false);
   const { bikes } = useBike();

@@ -8,7 +8,7 @@ export interface Bike {
 
 //Calls the endpoint for the list of available bikes and parking.
 
-class StationService {
+class BikeService {
   getAllStations() {
     const controller = new AbortController();
     const request = apiClient.get<Bike[]>("/station_status.json", {
@@ -19,4 +19,4 @@ class StationService {
   }
 }
 
-export default new StationService();
+export default new BikeService();

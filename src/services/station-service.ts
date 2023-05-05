@@ -14,7 +14,7 @@ export interface Station {
 class StationService {
   getAllStations() {
     const controller = new AbortController();
-    const request = apiClient.get<Station[]>("/station_information.json", {
+    const request = apiClient.get<Station[]>("/station_information.vjson", {
       signal: controller.signal,
     });
 
